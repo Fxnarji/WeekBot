@@ -3,7 +3,7 @@ const { clientId, token } = require('./settings.js');
 const fs = require('node:fs');
 const path = require('node:path');
 const CommandIndex = require("./commands/index.js");
-const Servers = []
+const Servers = ["1182726614447030372"]
 
 const commands = [];
 

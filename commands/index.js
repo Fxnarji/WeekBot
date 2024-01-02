@@ -1,2 +1,3 @@
 const PingCommand = require("./ping.js");
-module.exports = [PingCommand]
+const scrimpoll = require("./scrimpoll.js");
+module.exports = [PingCommand,scrimpoll]
