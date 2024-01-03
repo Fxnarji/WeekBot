@@ -3,7 +3,7 @@ const { clientId, token } = require('./settings.js');
 const fs = require('node:fs');
 const path = require('node:path');
 const CommandIndex = require("./commands/index.js");
-const Servers = ["1182726614447030372"]
+//const Servers = ["1182726614447030372"]
 
 const commands = [];
 
@@ -18,21 +18,26 @@ const rest = new REST().setToken(token);
 
 // and deploy your commands!
 (async () => {
-	try {
+    try {
 
-        for (const server of Servers) {
+        /*for (const server of Servers) {
             console.log(`Started refreshing ${commands.length} application (/) commands for server ${server}`);
 
             const serverResult = await rest.put(
-                Routes.applicationGuildCommands(clientId,server),
+                Routes.applicationCommands(clientId),
                 { body: commands },
             );
             console.log(`Successfully reloaded ${serverResult.length} application (/) commands for server ${server}`);
 
-        }
+        }*/
 
-	} catch (error) {
-		// And of course, make sure you catch and log any errors!
-		console.error(error);
-	}
+        const serverResult = await rest.put(
+            Routes.applicationCommands(clientId),
+            { body: commands},
+        );
+
+    } catch (error) {
+        // And of course, make sure you catch and log any errors!
+        console.error(error);
+    }
 })();
