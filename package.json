@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "run": "node ./index.js",
+    "reload:linux": "git fetch & git pull & systemctl stop discord-weekbot & systemctl start discord-weekbot"
+  },
   "dependencies": {
     "discord.js": "^14.14.1"
   }
