@@ -1,7 +1,6 @@
 const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
 const { token } = require("./settings");
 const CommandIndex = require("./commands/index.js");
-const keep_alive = require('./keep_alive.js')
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] })
 
